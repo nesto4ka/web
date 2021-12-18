@@ -1,0 +1,90 @@
+<meta charset="utf-8">
+<html>
+<script>
+//задача 1
+	let user = {
+		name:"Джон",
+		age:30
+	};
+	user.sayHi = function(){
+		alert("Привет!");
+	};
+	user.sayHi();
+
+//задача 2
+	let customer = {
+		name: "Ilana", surname: "Kunasheva", age: "19", mail: "azmrktsv@gmail.com", phone: "88005553535"
+	};
+	customer.inf = function(){
+		alert(this.name + ' ' + this.surname + ' ' + this.phone)
+	}
+	customer.inf();
+
+//задача 3	
+	let customer1 = {
+		name: "Ilana", surname: "Kunasheva", age: 19, mail: "azmrktsv@gmail.com", phone: "88005553535", kitchen:"Japan"};
+	let customer2 = {
+		name: "Eliza", surname: "Temiraeva", age: 17, mail: "e.temiraeva@gmail.com", phone: "81029384756", kitchen:"Italy"};
+	let order1 = {
+		name: "Eliza", surname: "Temiraeva", phone: "81029384756", content:"pizza", time: 12, date: 9, event:"date"};
+	let order2 = {
+		name: "Ilana", surname: "Kunasheva", phone: "88005553535", content:"sushi", time:16, date: 1, event: "birthday"};
+	let restaurant1 = {kitchen:"Japan", content:"sushi", name:"tanuki", city:"Moscow"};
+	let restaurant2 = {kitchen:"Italy", content:"pizza", name:"dodo", city:"Vladikavkaz"};
+	order1.inf = function(){
+		if (this.time == 12){
+			if (restaurant2.kitchen == "Italy"){
+				alert(customer2.name + ' ' + restaurant2.city + ' ' + this.content);
+			}
+		}
+		else {
+			alert("There is no order");
+		}
+	}
+	order2.inf = function(){
+		if (this.date == 1){
+			if (customer1.name == "Ilana"){
+				alert(restaurant1.name + ' ' + this.event + ' ' + customer1.kitchen);
+			}
+		}
+		else {
+			alert("There is no order");
+		}
+	}
+	order1.inf();
+	order2.inf();
+
+//задача 4
+	function User(name){
+		this.name = name;
+		this.isAdmin = false;
+	}
+	let user1 =  new User('Anastasia');
+	let user2 = new User('Ilana');
+	let user3 = new User('Eliza');
+
+	alert(user1.name);
+	alert(user2.name);
+	alert(user3.name);
+
+//задача 5
+	function User(name, surname, age){
+		this.name = name;
+		this.age = age;
+		this.surname = surname;
+		this.sayName=function(){
+			alert("Меня зовут "+ this.name);
+		};
+		this.saySurname=function(){
+			alert("Моя фамилия "+ this.surname);
+		};
+		this.sayAge=function(){
+			alert("Мне "+ this.age);
+		};
+	}
+	let anastasia = new User("Анастасия", "Михеева", 19);
+	anastasia.sayName();
+	anastasia.saySurname();
+	anastasia.sayAge();
+</script>
+</html>

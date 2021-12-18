@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+<html>
+<script>
+//задача 1
+	var arr = [];
+	var sum = 0;
+	var pol =[];
+	for (var i = 0; i<=15; i++) {
+		arr[i] = Math.round(Math.random()*30) -10;
+		if (arr[i]>0){
+			pol.push(arr[i]);
+		}
+	}
+	for (var i = 0; i<pol.length; i++){
+		sum +=pol[i];
+		
+	}
+	alert(sum/pol.length);
+
+//задача 2 и 3
+	var n = prompt("Введите число n>10:");
+	if (n<10){
+		alert("Вы ввели число меньше 10");
+		var n = prompt("Введите число n>10:");
+	}
+	var array2=[];
+	sum2=0
+	sumotr=0
+	sum0=0
+	for (var i = 0; i<n; i++) {
+		array2[i] = Math.round(Math.random()*30) -10;
+		if (array2[i]<0){
+			sumotr+=array2[i];
+			array2[i]=array2[i]**2;
+		}
+		else if (array2[i]==0){
+			sum0+=1;
+		}
+		else {
+			sum2+=array2[i];
+		}
+	}
+	alert(array2);
+	alert("Среднее арифметическое положительных чисел: "+sum2/n);
+	alert("Среднее арифметическое отрицательных чисел: "+Math.abs(sumotr/n));
+	alert("Число нулей: "+sum0);
+
+//задача 4
+	arr3=[]
+	var k=0
+	for (var i = 0; i<1000000; i++) {
+		arr3[i] = Math.round(Math.random()*3);
+		if (arr3[i] ==0){
+			k+=1;
+		}
+	}
+	alert("Количество красных: "+k)
+</script>
+</html>
